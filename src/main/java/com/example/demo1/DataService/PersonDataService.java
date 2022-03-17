@@ -10,22 +10,31 @@ public class PersonDataService {
 
     public List<Person> getAllPersons() {
         MariaDB dbHandler = new MariaDB();
-        return InMemDB.getInstance().getPersonList();
+        return dbHandler.getAllPersons();
+        //return InMemDB.getInstance().getPersonList();
     }
 
     public Person getPerson(int personId) {
-        return InMemDB.getInstance().getPerson(personId);
+        MariaDB dbHandler = new MariaDB();
+        return dbHandler.getPerson(personId);
+        //return InMemDB.getInstance().getPerson(personId);
     }
 
-    public int updatePerson(int personId, Person person) {
-        return InMemDB.getInstance().updatePerson(personId, person);
+    public int updatePerson(Person person) {
+        MariaDB dbHandler = new MariaDB();
+        return dbHandler.putPerson(person);
+        //return InMemDB.getInstance().updatePerson(person);
     }
 
     public int deletePerson(int personId) {
-        return InMemDB.deleteFromPersonList(personId);
+        MariaDB dbHandler = new MariaDB();
+        return dbHandler.deletePerson(personId);
+        //return InMemDB.deleteFromPersonList(personId);
     }
 
     public int addPerson(Person person) {
-        return InMemDB.getInstance().insertIntoPersonList(person);
+        MariaDB dbHandler = new MariaDB();
+        return dbHandler.postPerson(person);
+        //return InMemDB.getInstance().insertIntoPersonList(person);
     }
 }

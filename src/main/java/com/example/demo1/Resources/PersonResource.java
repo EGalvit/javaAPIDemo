@@ -34,11 +34,11 @@ public class PersonResource {
 
     @PUT
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("{personId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public int personPUT(@PathParam("personId") int personId, Person person) {
+    public int personPUT(Person person) {
         PersonDataService dataService = new PersonDataService();
-        return dataService.updatePerson(personId, person);
+        dataService.updatePerson(person);
+        return 1;
     }
 
     @DELETE

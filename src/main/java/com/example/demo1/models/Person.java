@@ -3,6 +3,19 @@ package com.example.demo1.models;
 public class Person {
 
     private int personId;
+    private String fullName;
+    private String email;
+    private String note;
+
+    public Person() {
+    }
+
+    public Person(int personId, String fullName, String email, String note) {
+        this.personId = personId;
+        this.fullName = fullName;
+        this.email = email;
+        this.note = note;
+    }
 
     public int getPersonId() {
         return personId;
@@ -36,17 +49,13 @@ public class Person {
         this.note = note;
     }
 
-    private String fullName;
-    private String email;
-    private String note;
-
-    public Person() {
-    }
-
-    public Person(int personId, String fullName, String email, String note) {
-        this.personId = personId;
-        this.fullName = fullName;
-        this.email = email;
-        this.note = note;
+    @Override
+    public String toString() {
+        return "Person{" +
+                "personId=" + personId +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", note='" + note + '\'' +
+                '}';
     }
 }
